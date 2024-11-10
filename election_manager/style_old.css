@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: 0;
+}
+
+
+header{
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    top:0;
+    background-color: rgb(2, 77, 2);
+}
+
+header .header{
+    width: 75%;
+    display: flex;
+    padding: 2px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.header .title h1{
+    color: yellow;
+}
+
+.header .menu ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header .menu ul li{
+    list-style: none;
+    padding: 10px;
+}
+
+.header .menu ul li a:hover{
+    text-decoration: underline;
+}
+
+.header .menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+/* body code style */
+
+.container{
+    margin-top: 10vh;
+    background-size: contain;
+    height: 90vh;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* election */
+.container .election-container{
+    width: 50%;
+    height: 30vh;
+    margin: 0 auto;
+    border-radius: 10px 10px 10px 10px;
+    color: white; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 2%;
+}
+
+.election-container .content{
+    display: block;
+}
+
+.election-container .content #card{
+    width: 90%;
+    padding: 5px;
+    min-height: 30px;
+    outline:1px rgb(30, 243, 143) dotted;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.514);
+    font-size: x-large;
+    display: block;
+}
+
+.election-container .content #control-card{
+    width: 90%;
+    padding: 5px;
+    min-height: 30px;
+    margin-top: 5px;
+    font-size: x-large;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(245, 44, 44, 0.514);
+    font-size: medium;
+    display: none;
+}
+
+.done{
+    background-color: rgba(38, 235, 38, 0.918);
+}
+
+/* vote space specifique css code */
+.container .vote-container{
+    width: 75%;
+    height: 90vh;
+    margin: 0 auto;
+}
+
+/* all desing  */
+
+/* sub tilte desing */
+.vote-container .instructions span,
+.vote-container .candidates span:first-child{
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.945);
+}
+
+/* vote title desing */
+.vote-container .title{
+    border-bottom: 1px solid rgba(88, 86, 86, 0.959) ;
+    display: block;
+    max-height: 10vh;
+    padding: 2px;
+}
+
+.vote-container .title h2{
+    font-size: x-large;
+    color: rgb(7, 56, 9);
+    align-self: center;
+    text-align: left;
+    font-variant-caps: titling-caps;
+}
+
+/* candidates and vote code style */
+.candidates .list-candidates{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    height: 80vh;
+}
+
+.candidates .list-candidates::-webkit-scrollbar{
+    width: 0.5px;
+}
+
+.candidates .list-candidates .candidate{
+    background-color: rgb(246, 252, 246);
+    padding: 5px;
+    text-align: center;
+}
+
+.candidates .list-candidates .candidate .identities img{
+    height: 40vh;
+    width: 100%;
+    object-fit: scale-down;
+    padding: 1px;
+    background-color: rgba(36, 35, 35, 0.13);
+}
+
+@media screen and (max-width: 900px) {
+    .container, header{
+        width: 100%;
+    }
+    .container .vote-container, .container .election-container, header .header{
+        width: 95%;
+    }
+
+    header .header{
+        display: flex;
+    }
+
+}
+

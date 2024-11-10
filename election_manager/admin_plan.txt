@@ -1,0 +1,10 @@
+la page admin feras que quand ladmin du vote programme un vote que celui-ci fasse
+cela etape par etape. donc il commence avec l'arolement et apres cela 
+il passe la generation des bille et aores cela il passe au lencemeent de vote.
+
+- enrolement
+- creation de billet de vote 
+- lancement de vote 
+- publication des resultats
+
+
