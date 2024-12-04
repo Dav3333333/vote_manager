@@ -27,11 +27,33 @@ function getVote_auth() {
     xhr.send()
 }
 
-getVote_auth()
 
-entry.focus()
+/**
+ * functions that redirect user
+ */
+
+function xhrControlCard(cardCode) {
+    let xhr = new XMLHttpRequest()
+    xhr.open("POST", "php/apis/validate_card.php")
+    xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
+            if(xhr.responseText === "valid"){
+                // as this doesnt work well I change something in the api space
+                document.location.href = "vote?cardCode="+cardCode
+                entry.value = ""
+            }else{
+                control_text.innerHTML =  xhr.responseText
+            }
+        }
+    }
+    let formData = new FormData(form)
+    xhr.send(formData)
+}
+
+// scripts
 
 entry.addEventListener("keyup", (e)=>{
+    e.stopPropagation()
     if(entry.value.length > 0 && entry.value.length < 10){
         control_text.style.display = "block"
         control_text.textContent = "veuiller atteindre 10 caracterer"
@@ -44,26 +66,11 @@ entry.addEventListener("keyup", (e)=>{
         control_text.style.display = "none"
         entry.value = ""
     }
-    e.stopPropagation()
 })
 
-function xhrControlCard(cardCode) {
-    let xhr = new XMLHttpRequest()
-    xhr.open("POST", "php/apis/validate_card.php")
-    xhr.onload = ()=>{
-        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
-            if(xhr.responseText === "valid"){
-                document.location.href = "vote?cardCode"+cardCode
-                entry.value = ""
-            }else{
-                control_text.innerHTML =  xhr.responseText
-            }
-        }
-    }
-    let formData = new FormData(form)
-    xhr.send(formData)
-}
 
-// d.length
+getVote_auth()
+
+entry.focus()
 
 
